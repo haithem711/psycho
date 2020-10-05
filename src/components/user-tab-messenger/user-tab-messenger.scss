@@ -1,0 +1,104 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+.ant-skeleton{
+  .ant-skeleton-title{
+    width: 100% !important;
+    border-radius: 20px;
+  }
+}
+
+.user-tab-messenger {
+  @include flexbox();
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1s; /* Opera < 12.1 */
+  animation: fadein 1s;
+  min-height: 60px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: row;
+  min-width: 200px;
+  @include transition(all, 0.2s, ease-in-out);
+  @media (max-width: 600px) {
+    padding: 0;
+    margin: 0;
+    min-width: 40px;
+    width: 44px;
+    @include flexbox();
+    justify-content: center;
+    align-items: center;
+    min-height: 46px;
+    background: transparent;
+  }
+  .ant-avatar{
+
+    img{
+      object-fit: cover;
+
+    }
+    @media (max-width: 600px) {
+      width: 40px !important;
+      height: 40px !important;
+    }
+  }
+  padding: .4rem;
+  background: whitesmoke;
+  &:hover{
+    background: rgba(248, 163, 108, 0.30);
+  }
+  border-radius: 12px;
+  margin: 0 !important;
+  cursor: pointer;
+  margin-top: 10px !important;
+  .left {
+    @include flexbox();
+    align-items: center;
+    justify-content: center;
+    height:  60px;
+    width: 60px;
+    @media (max-width: 600px) {
+      width: 40px;
+      height: 40px;
+      max-height: 40px;
+    }
+    .avatar-round {
+      border: 2px solid $blue-secondary;
+      background: $blue-primary;
+    }
+  }
+  .right {
+    @include flexbox();
+    flex-direction: row;
+    height: 100%;
+    align-items: flex-start;
+    width: calc(100% - 100px);
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0.1rem 0.4rem;
+    flex: 100%;
+    .text{
+      h5 {
+        color: #a0a0a0;
+      }
+    }
+    .actions{
+      opacity: 0;
+      transform: translateX(10px);
+      @include transition(all, 0.1s, ease-in-out)
+    }
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+  &:hover, &:focus , &:focus-within{
+    .actions{
+      opacity: 1;
+      transform: translateX(0px);
+      color: $blue-primary;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+.speciality-link {
+  flex: 1;
+  padding: 0;
+  @include flexbox();
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  .ant-typography{
+    font-size: 1rem;
+    @media (min-width: 700px) {
+      font-size: 1.2rem;
+    }
+  }
+  opacity: 0;
+  svg{
+    padding:.4rem;
+    max-height: 140px;
+    width: 100%;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+  }
+  .anticon{
+    font-size: 7rem;
+  }
+  &:hover{
+    svg{
+      transform: scale(.8);
+    }
+  }
+}

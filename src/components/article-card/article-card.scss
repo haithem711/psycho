@@ -1,0 +1,168 @@
+@import "../../stylesheets/mixins";
+@import "../../stylesheets/variables";
+.article{
+  cursor:pointer;
+  z-index: 1;
+  flex: 1;
+  position: relative;
+  @include flexbox();
+  flex-direction: column;
+  min-width: 300px;
+  width: 100%;
+  border-radius: 13px;
+  background: white;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  min-height: 240px;
+  @media (min-width:768px){
+    width: calc(25% - 2em);
+    margin: 0 0 1em 1em;
+    min-width: 320px;
+  }
+  opacity: 0;
+  -webkit-animation: fadeinTranslateDown .6s forwards; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeinTranslateDown .6s forwards; /* Firefox < 16 */
+  -ms-animation: fadeinTranslateDown .6s forwards; /* Internet Explorer */
+  -o-animation: fadeinTranslateDown .6s forwards; /* Opera < 12.1 */
+  animation: fadeinTranslateDown .6s forwards;
+  border: 1px solid whitesmoke;
+
+  .overlay{
+    @include flexbox();
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    .cover {
+      position: absolute;
+      z-index: 1;
+      overflow: hidden;
+      border-radius: 13px ;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: $blue-primary;
+      img{
+        height: 100%;
+        @include transition(all, 0.2s, ease-in-out);
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        position: relative;
+      }
+      &:after{
+        display: block;
+        width: 100%;
+        height: 100%;
+        content: "";
+        z-index: 0;
+        position: absolute;
+        left:0;
+        top:0;
+        background: rgba(0,0,0,.5);
+      }
+    }
+
+    .card-content{
+      .avatar-article-card{
+        position: absolute;
+        right:1rem;
+        top:.8rem;
+        background: $blue-primary;
+        img{
+          object-fit: cover;
+          border-radius: 100%;
+          object-position: center;
+          border: 2px solid white;
+        }
+      }
+      top: 0;
+      left: 0;
+      padding: .4em 1em .4em 1em;
+      color: white;
+      z-index: 2;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      @include flexbox();
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      h3{
+        color:white;
+        width: 80%;
+        padding-top: .5em;
+        text-transform:capitalize;
+        font-weight: 800;
+        font-size: 2rem;
+      }
+      .content-actions{
+        position: relative;
+        @include flexbox();
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+        p{
+          color: white;
+          font-weight: 700;
+        }
+        .actions{
+          position: relative;
+          @include flexbox();
+          align-items: center;
+          justify-content: center;
+          width: 15%;
+          height: 50%;
+          .ant-badge-count{
+            background: $light-orange;
+            box-shadow: none;
+            line-height: 18px;
+            font-weight: 600;
+          }
+          .btn-like{
+            right:0;
+            padding: .2em;
+            font-size: 2rem;
+            @include transition(all, 0.2s, ease-in-out);
+            &:hover{
+              opacity:.8;
+            }
+            &.liked{
+              color: $white ;
+              border-color: $blue-primary;
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+
+  &:after{
+    position: absolute;
+    display: inline-block;
+    z-index: -1;
+    bottom:-6px;
+    left: 10%;
+    filter:blur(10px);
+    content:"";
+    width: 80%;
+    height: 20px;
+    background: rgba(2, 59, 76, .5);
+    @include transition(all, 0.2s, ease-in-out);
+  }
+  &:hover{
+    &:after {
+      height: 30px;
+      bottom:-10px;
+      background: rgba(2, 59, 76, .7);
+    }
+
+    .cover img{
+      @include transform(scale(1.2))
+    }
+  }
+}

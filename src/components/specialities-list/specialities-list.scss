@@ -1,0 +1,29 @@
+@import "../../stylesheets/mixins";
+.specialities-list {
+  @include flexbox();
+  position: relative;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  @media (min-width: 700px) {
+    max-width: 1000px;
+  }
+  .title {
+    align-self: flex-start;
+  }
+  @for $i from 1 through 6 {
+    .speciality-link:nth-child(#{$i}) {
+      -webkit-animation: fadeinTranslateDown
+        0.8s
+        forwards; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadeinTranslateDown 0.8s forwards; /* Firefox < 16 */
+      -ms-animation: fadeinTranslateDown 0.8s forwards; /* Internet Explorer */
+      -o-animation: fadeinTranslateDown 0.8s forwards; /* Opera < 12.1 */
+      animation: fadeinTranslateDown 0.8s forwards;
+      animation-delay: $i * 0.15s;
+    }
+  }
+}

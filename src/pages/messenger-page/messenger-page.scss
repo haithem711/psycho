@@ -1,0 +1,182 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.messenger-page {
+  @include flexbox();
+  position: relative;
+  background: white;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #e8e8e8;
+  box-sizing: border-box;
+  min-height: calc(100vh - 72px) !important;
+  max-height: calc(100vh - 72px);
+  @media (max-width: 1280px) and (min-width: 600px) {
+    margin-top: 0px !important;
+  }
+  @media (max-width: 600px) {
+    padding-top: 1rem;
+    min-height: calc(100vh - 57px) !important;
+    max-height: calc(100vh - 57px);
+  }
+
+  padding-top: 0rem;
+  .search-container {
+    @include flexbox();
+    padding: .8rem;
+    padding-bottom: 0.6rem;
+    margin: 0;
+    border-bottom: 1px solid #e8e8e8;
+    justify-content: flex-start;
+    align-items: center;
+    @media (max-width: 600px) {
+      width: 100%;
+      max-width: unset;
+      margin-bottom: 5px;
+      border-right: none;
+      justify-content:space-between;
+      padding: 0.4rem;
+      padding-top: 0rem;
+    }
+    .ant-page-header {
+      min-width: 100px;
+      padding: 0;
+      width: 25%;
+      span {
+        color: $blue-primary;
+      }
+      i {
+        color: $blue-primary;
+      }
+      @media (max-width: 600px) {
+      }
+    }
+    .ant-input-search {
+      height: 36px;
+      width: 75% !important;
+      input {
+        border-radius: 35px;
+      }
+    }
+  }
+  .messenger-box {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: stretch;
+    box-sizing: border-box;
+    position: relative;
+    height: calc(100vh - 80px);
+    .discussion-content {
+      position: relative;
+      width: 75%;
+      overflow-y: hidden;
+      box-sizing: border-box;
+      direction: ltr;
+      padding: 0 1rem;
+      @include flexbox();
+      -webkit-animation: fadein 0.4s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 0.4s; /* Firefox < 16 */
+      -ms-animation: fadein 0.4s; /* Internet Explorer */
+      -o-animation: fadein 0.4s; /* Opera < 12.1 */
+      animation: fadein 0.4s;
+      margin: 0;
+      flex-direction: column;
+      min-height: calc(100vh - 140px);
+      max-height: calc(100% - 140px);
+      justify-content: space-between;
+      @media (max-width: 600px) {
+        width: 100%;
+
+        padding: 0 .3rem;
+        max-height: calc(100% - 100px);
+      }
+      .chat-container {
+        position: relative;
+        @include flexbox();
+        flex-direction: column;
+        align-items: flex-start;
+        scroll-behavior: auto;
+        margin-bottom: 2px;
+        overflow-y: scroll;
+        direction: ltr;
+        height: 100%;
+        min-height:calc(100vh - 400px);
+        width: 100%;
+        padding: 1rem 2rem;
+
+        .empty-container {
+          @include flexbox();
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          align-items: center;
+          justify-content: center;
+          top: 0;
+          left: 0;
+        }
+        @media (max-width: 600px) {
+          padding: 0.2rem 0.1rem;
+          min-height:calc(100vh - 300px);
+        }
+      }
+      .message-form {
+        @include flexbox();
+        flex-direction: column;
+        justify-content: flex-end;
+        z-index: 1;
+        position: relative;
+        width: 100%;
+        align-items: center;
+        .ant-form-explain{
+          position: absolute;
+          top:-20px;
+        }
+        .emoji-container {
+          @include flexbox();
+          position: fixed;
+          right: 5%;
+          @media (max-width: 600px) {
+            right: -10px;
+          }
+          bottom: 75px;
+          display: block;
+          box-shadow: 0px 10px 13px -7px rgba(0, 0, 0, 0.4);
+          .emoji-picker {
+            position: relative;
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
+          }
+        }
+        .ant-form-item-control {
+          max-width: 100%;
+          position: relative;
+          .input-msg {
+            input {
+              box-shadow: none !important;
+              border: 2px solid $blue-secondary;
+              border-color: $blue-secondary !important;
+              border-radius: 30px;
+              height: 40px;
+              font-size: 17px;
+            }
+          }
+        }
+
+        .send-form-button {
+          border-radius: 100%;
+          border: 0;
+          top: 10px;
+          background: transparent;
+          position: absolute;
+          right: 5px;
+          &:hover {
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+}

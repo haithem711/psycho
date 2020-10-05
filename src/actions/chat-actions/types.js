@@ -1,0 +1,22 @@
+/*
+@
+ This file contains the types constants
+@
+*/
+
+export const FETCH_CHAT_REQUEST = "FETCH_CHAT_REQUEST ";
+export const FETCH_CHAT_SUCCESS = "FETCH_CHAT_SUCCESS ";
+export const FETCH_CHAT_FAILURE = "FETCH_CHAT_FAILURE ";
+
+export const POST_CHAT_REQUEST = "POST_CHAT_REQUEST";
+
+export const ADD_CHAT_MESSAGE = "ADD_CHAT_MESSAGE";
+export const RECIVED_CHAT_MESSAGE = "RECIVED_CHAT_MESSAGE";
+export const GET_CHAT_MEMBERS = "GET_CHAT_MEMBERS";
+
+export const SET_ACTIVE_CHAT_MEMBERS = "SET_ACTIVE_CHAT_MEMBERS";
+
+export const POST_CHAT_SUCCESS = "POST_CHAT_SUCCESS ";
+export const POST_CHAT_FAILURE = "POST_CHAT_FAILURE ";
+
+export const CLEAR_CHAT = "CLEAR_CHAT ";

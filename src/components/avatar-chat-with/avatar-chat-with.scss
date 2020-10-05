@@ -1,0 +1,76 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+.loading-avatar-with{
+  position: relative;
+  @include flexbox();
+  justify-content: flex-start;
+  align-items: center;
+  height: 38px;
+  width:auto;
+  opacity: .4;
+  -webkit-animation: fadein .2s forwards; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein .2s forwards; /* Firefox < 16 */
+  -ms-animation: fadein .2s forwards; /* Internet Explorer */
+  -o-animation: fadein .2s forwards; /* Opera < 12.1 */
+  animation: fadein .2s forwards;
+  @media (max-width: 700px) {
+    flex-direction: row-reverse;
+  }
+  .avatar-is-loading{
+    position: relative;
+    display: block;
+    content: "";
+    min-width: 39px;
+    height: 39px;
+    width: 39px;
+    background: $white;
+    border-radius: 100%;
+  }
+  .name-is-loading{
+    position: relative;
+    display: block;
+    content: "";
+    height: 18px;
+    margin-left: 4px;
+    @media (max-width: 700px) {
+      margin-right: 4px;
+    }
+    width: 160px;
+    border-radius: 20px;
+    background: $white;
+  }
+}
+.avatar-chat-with {
+  cursor: pointer;
+  @include flexbox();
+  align-items: center;
+  justify-content: flex-start;
+  opacity: .4;
+  -webkit-animation: fadein .2s forwards; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein .2s forwards; /* Firefox < 16 */
+  -ms-animation: fadein .2s forwards; /* Internet Explorer */
+  -o-animation: fadein .2s forwards; /* Opera < 12.1 */
+  animation: fadein .2s forwards;
+  @media (max-width: 700px) {
+    flex-direction: row-reverse;
+  }
+  h4 {
+    font-weight: 800;
+    color: $blue-primary;
+    @include transition(opacity,0.2s, ease-in-out);
+  }
+  &:hover{
+    h4{
+      opacity: .8;
+    }
+  }
+  .ant-avatar {
+    margin-right: 0.4rem;
+    @media (max-width: 700px) {
+      margin-left: 0.4rem;
+    }
+    img {
+      object-fit: cover;
+    }
+  }
+}

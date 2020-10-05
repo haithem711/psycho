@@ -1,0 +1,92 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+.menu-drawer{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top:0;
+  right: 0;
+  height: 100vh;
+  width: 90%;
+  box-shadow: none;
+  max-width: 380px;
+  background: $blue-primary;
+  z-index: 8;
+  align-items: center;
+  .menu-navs{
+    @include flexbox();
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 20%;
+    padding-top: 20%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+
+    a{
+      color: $light-orange;
+      font-weight: 800;
+      font-size: 2rem;
+      &.active{
+        color: $white;
+      }
+    }
+  }
+  .avatar-logout{
+    @include flexbox();
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 20%;
+    padding-top: 20%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    position: absolute;
+    bottom:10%;
+    .avatar-pic{
+      border-color: $light-orange;
+    }
+
+    .logout-btn{
+      border: none;
+      color: $white;
+      background: transparent;
+      flex: 1;
+      align-self: flex-start;
+    }
+    .chat-link{
+      @include flexbox();
+      color:white;
+      margin-left: 10px;
+      height: 100%;
+    }
+  }
+
+}
+
+
+//menu icon hamburger
+.menu-hamburger{
+  z-index: 9;
+  width: 36px;
+  @include flexbox();
+  position: fixed;
+  flex-direction: column;
+  align-self: flex-start;
+  right: 16px;
+  top:18px;
+  span{
+    height: 4px;
+    border-radius: 12px;
+    margin-bottom: 5px;
+    width: 100%;
+    background:#EBECEB ;
+  }
+
+  @media (min-width: 600px) {
+    display: none;
+  }
+
+}

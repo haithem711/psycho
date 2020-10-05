@@ -1,0 +1,152 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.navbar {
+  opacity: 1;
+  @include flexbox();
+  width: 100%;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 9;
+  @include align-items(center);
+  justify-content: flex-end;
+  padding: 1rem 20px;
+  max-height: 100px;
+  @media (max-width:768px){
+    max-height: unset;
+  }
+  border-color: $blue-primary;
+  background: $blue-primary !important;
+  .navbar-section {
+
+    &.navbar-left {
+      margin-right: auto;
+      @include flexbox();
+      flex-wrap: wrap;
+      @include align-items(center);
+      justify-content: space-evenly;
+      align-items: center;
+      .ant-input-search{
+        @media  (max-width: 700px) {
+          display: none;
+        }
+        width: 100%;
+        input{
+          width: 100%;
+          font-weight: 600;
+          color: $white !important;
+          background: $blue-primary !important;
+          &:focus, &:hover{
+            border-color: white;
+            color: white !important;
+          }
+        }
+        .ant-input-search-icon{
+          color: $white;
+        }
+      }
+      @media (max-width: 600px) {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: flex-start;
+        .ant-input-search{
+          min-width: unset;
+          width: 100% !important;
+          max-width: 280px;
+        }
+      }
+      .navbar-brand {
+        align-self: flex-start;
+        margin: 0 20px 0 0;
+        color:$white;
+        font-weight: 900;
+      }
+    }
+
+    &.navbar-right {
+
+      @include flexbox();
+      flex-wrap: wrap;
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
+      @include align-items(center);
+      .menu-navbar {
+        background: $blue-primary;
+        color: $white;
+        @media only screen and (max-width: 600px) {
+          min-width: unset;
+        }
+        border: 0;
+        @include flexbox();
+        flex-wrap: wrap;
+        a{
+          font-weight: 600;
+          color: $white;
+          height: 100%;
+          padding-left: .6rem;
+          position: relative;
+          padding-right: .6rem;
+          margin-right: .4rem;
+          text-align: center;
+          &:after{
+            left: 0;
+            bottom:0;
+            position: absolute;
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: $light-orange;
+            @include transition(all, 0.2s, ease-in-out);
+          }
+          &:hover{
+            color: white;
+            border-color: $light-orange;
+            &:after{
+              width: 100%;
+            }
+          }
+          &.active{
+            font-weight: 600;
+            &:after{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .au-link{
+    font-weight: 800;
+    color:$white;
+    padding:.1rem;
+    &.active{
+      color:$light-orange;
+    }
+  }
+  .avatar-pic{
+    border: .2rem solid $blue-secondary;
+    background: $white;
+    img{
+      @include transition(all, 0.2s, ease-in-out);
+      object-fit: cover;
+    }
+  }
+}
+
+.user-drop-down{
+  background: none;
+  cursor: pointer;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  &:focus{
+    outline: none;
+  }
+  .arrow-down{
+    color: $light-orange;
+    margin-left: 5px;
+  }
+}

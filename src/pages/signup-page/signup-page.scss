@@ -1,0 +1,77 @@
+@import "../../stylesheets/mixins";
+
+.auth-container {
+  @include flexbox();
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  align-items: center;
+  min-height: calc(100vh - 140px);
+  justify-content: center;
+  flex-direction: column;
+
+  .blue-h2{
+    align-self: flex-start;
+    margin-left: 4rem;
+  }
+  .container-row{
+    box-sizing: border-box;
+    @include flexbox();
+    width: 100%;
+    position: relative;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    .right-svg-container{
+      @include flexbox();
+      width: 45%;
+      @media (max-width: 600px) {
+        padding-bottom: 2rem;
+      }
+      svg{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .signup-form{
+      width: 55%;
+    }
+  }
+}
+
+.auth-container .signup-form {
+  max-width: 340px;
+  min-width: 300px;
+  .uploaditem {
+    .has-success.has-feedback .ant-form-item-children-icon {
+      right:0px !important;
+      left:unset !important;
+      transform: translateX(300px) translateY(-33px);
+      border-radius: 100%;
+    i{
+      svg{
+        background: white;
+        border-radius: 100%;
+      }
+    }
+    }
+  }
+  .ant-upload {
+    padding: 0 !important;
+  }
+  .ant-upload.ant-upload-select-picture-card {
+    padding: 0;
+    height: 50px;
+    img {
+      object-fit: cover;
+      height: 50px;
+    }
+  }
+}
+.auth-container .signup-form-forgot {
+  float: right;
+}
+.auth-container .signup-form-button {
+  width: 100%;
+}

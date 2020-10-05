@@ -1,0 +1,12 @@
+@import "../../stylesheets/mixins";
+@import "../../stylesheets/variables";
+
+.comment{
+  width: 100%;
+  opacity: 0;
+  -webkit-animation: fadeinTranslate .3s forwards; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeinTranslate .3s forwards; /* Firefox < 16 */
+  -ms-animation: fadeinTranslate .3s forwards; /* Internet Explorer */
+  -o-animation: fadeinTranslate .3s forwards; /* Opera < 12.1 */
+  animation: fadeinTranslate .3s forwards;
+}

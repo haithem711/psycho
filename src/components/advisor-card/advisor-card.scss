@@ -1,0 +1,139 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  opacity: 0;
+  width: 100%;
+  transform: translateX(-40px);
+  -webkit-transform: translateX(-40px);
+  .drop-shadow-card {
+    position: relative;
+    display: block;
+    bottom: 20px;
+    filter: blur(15px);
+    left: 8%;
+    width: 84%;
+    background: rgba(2, 59, 76, 0.8);
+    height: 15px;
+    border-radius: 30%;
+    @include transition(all, 0.2s,ease-in-out);
+  }
+  &:hover{
+    .drop-shadow-card {
+      background: rgba(2, 59, 76, 0.4);
+    }
+  }
+  .btn-card{
+    min-width: 120px;
+    font-weight: 400;
+    &:focus-within{
+       color: $white;
+
+      background: $light-orange;
+      border-color: $light-orange;
+       @include transform(scale(.95));
+     }
+    &:not(:hover){
+
+      @include transform(scale(1));
+    }
+    &:hover{
+
+      background: $light-orange;
+      border-color: $light-orange;
+    }
+  }
+}
+.card-advisor {
+  border-radius: 10px;
+  height: 100%;
+  min-height: 140px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  z-index: 2;
+  background: whitesmoke;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ant-skeleton {
+    position: absolute;
+  }
+  .user-pic-status {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    h4 {
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+    }
+    .ant-badge-dot {
+      height: 12px;
+      width: 12px;
+      left: 0px;
+      top:10px
+    }
+    .avatar-round {
+      border: 2px solid white;
+      img{
+        object-fit: cover;
+      }
+    }
+    .picture {
+      display: flex;
+      margin-right: 10px;
+      .ant-avatar{
+        overflow:hidden;
+        svg{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .infos {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      .ant-typography-secondary {
+        margin: 0;
+      }
+    }
+  }
+  .right-items {
+    display: flex;
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .rating-items {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: auto;
+      justify-content: space-between;
+    }
+    .actions-items {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 130px;
+    }
+  }
+}

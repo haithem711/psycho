@@ -1,0 +1,127 @@
+@import "../../stylesheets/mixins";
+@import "../../stylesheets/variables";
+
+.question{
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  flex: 1;
+  width: 80%;
+  opacity: 0;
+  margin:0 10% 1.8rem;
+  box-sizing: border-box;
+  border-radius: 13px;
+  border: 1px solid whitesmoke;
+  -webkit-animation: fadeinTranslateDown .3s forwards; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeinTranslateDown .3s forwards; /* Firefox < 16 */
+  -ms-animation: fadeinTranslateDown .3s forwards; /* Internet Explorer */
+  -o-animation: fadeinTranslateDown .3s forwards; /* Opera < 12.1 */
+  animation: fadeinTranslateDown .3s forwards;
+  @include transition(all, 0.2s , ease-in-out);
+  @media only screen and (min-width: 768px) {
+    width: calc(50% - 1.8em);
+    margin:0 1.8em 1.8rem 0;
+  }
+  @media only screen and (min-width: 1200px) {
+    max-width: 380px;
+    width: calc(25% - 1.8em);
+  }
+  &::before{
+    position: absolute;
+    display: inline-block;
+    z-index: -1;
+    bottom:-6px;
+    left: 10%;
+    filter:blur(10px);
+    content:"";
+    width: 80%;
+    height: 20px;
+    background: rgba(2, 59, 76, .5);
+    @include transition(all, 0.2s, ease-in-out);
+  }
+  &:hover{
+    box-shadow: none;
+    &::before{
+      background: rgba(2, 59, 76, .8);
+
+    }
+    .ant-card .ant-card-cover{
+      img{
+        @include transform(scale(1.1));
+      }
+    }
+  }
+  .ant-card{
+    overflow: hidden;
+    height: 220px;
+    .avatar-question-card{
+      top:12px;
+      border: .2rem solid $blue-secondary;
+      position: absolute;
+      overflow: hidden;
+      img{
+        object-fit: cover;
+      }
+    }
+    border-radius: 14px;
+    border:none;
+    .question-footer{
+      @include flexbox();
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 1rem;
+      .ant-badge-count{
+        background: $light-orange;
+        line-height: 18px;
+        font-weight: 600;
+      }
+    }
+    &:hover{
+      box-shadow: none;
+    }
+    .ant-card-body{
+      padding: 1.2rem auto .8em;
+      width: 100%;
+      .ant-card-meta-detail{
+        width: 200px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        .ant-card-meta-title{
+          text-transform: capitalize;
+          color: $blue-primary;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .ant-card-cover{
+      position: relative;
+      overflow: hidden;
+      background: $blue-primary;
+      img{
+        @include transition(all, 0.2s, ease-in-out);
+        border-radius:14px 14px 0 0;
+        position: relative;
+        object-fit: cover;
+        object-position: top;
+        height: 20%;
+        max-height: 130px;
+        transition: all 0.2s ease-in-out;
+        @include transition(all, 0.2s, ease-in-out);
+      }
+    }
+  }
+  .btn-like{
+    padding: .2em;
+    font-size: 2rem;
+    @include transition(all, 0.2s, ease-in-out);
+    &:hover{
+      opacity:.8;
+    }
+  }
+  .btn-like.liked{
+    color: $blue-primary ;
+    border-color: $blue-primary;
+  }
+}

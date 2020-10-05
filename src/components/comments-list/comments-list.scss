@@ -1,0 +1,10 @@
+@import "../../stylesheets/mixins";
+@import "../../stylesheets/variables";
+.comments-list{
+  @include flexbox();
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1360px;
+}
