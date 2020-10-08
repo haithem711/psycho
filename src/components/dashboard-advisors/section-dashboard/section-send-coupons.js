@@ -24,7 +24,7 @@ const SendCoupons = () => {
                 <strong>Coupon Value (free minutes)</strong>
                 {freeMinute.map(tag => (
                     <CheckableTag
-                        style={{ width: '80px', cursor: 'pointer', border: 'solid 1px', margin: '5px 5px 0 5px' }}
+                        style={{ padding:'2px',textAlign:'center',width: '80px', cursor: 'pointer', border: 'solid 1px', margin: '5px 5px 0 5px' }}
                         key={tag}
                         checked={selectedTags.indexOf(tag) > -1}
                         onChange={checked => handleChange(tag, checked)}
@@ -37,7 +37,7 @@ const SendCoupons = () => {
                 <strong >Send to:</strong>
                 {sendto.map(tag => (
                     <CheckableTag
-                        style={{ width: '170px', cursor: 'pointer', border: 'solid 1px', margin: '5px 5px 0 5px' }}
+                        style={{ width: '170px',padding:'2px',textAlign:'center', cursor: 'pointer', border: 'solid 1px', margin: '5px 5px 0 5px' }}
                         key={tag}
                         checked={sendTo.indexOf(tag) > -1}
                         onChange={checked => handleChangeSendTo(tag, checked)}
