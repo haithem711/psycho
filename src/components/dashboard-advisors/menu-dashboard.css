@@ -1,0 +1,20 @@
+@media screen and (max-width: 600px) {
+    .menu-dashboard{
+        display: none;
+    }
+    .dropdown-dashboard{
+       
+        margin-top: 10px;
+        margin-left: 10px;
+       
+       
+    }
+    }
+    .menu-dashboard{
+        margin-top: -7px;
+       
+    }
+    @media screen and (min-width: 600px) {
+    .dropdown-dashboard{ display: none;}}
+
+    

@@ -19,8 +19,9 @@ import soundMessage from "./media/message.mp3";
 import QuestionsPage from "./pages/questions-page/QuestionsPage";
 import QuestionDetails from "./pages/question-details-page/QuestionDetails";
 import ArticleDetailsPage from "./pages/article-details-page/ArticleDetailsPage";
-import FinalForms from './pages/signup-form/FinalForm/FinalForm'
-import Dashboard from "./pages/Dashboard/Dashboard"
+import PsychicSignup from './pages/psychic-signup-page/psychic-signup-page'
+import Dashboard from "./pages/dashboard-page/dashboard-user"
+import DashboardAdvisors from "./pages/dashboard-advisor-page/dashboard-advisors"
 const uuidv4 = require("uuid/v4");
 const { Content } = Layout;
 let notifcationSound = new Howl({
@@ -86,14 +87,19 @@ class App extends React.Component {
                     path="/signup"
                     component={SignUpPage}
                 />
-                 <GuestRoute
+                <GuestRoute
                     authenticated={this.props.isLoggedIn}
-                    path="/finalform"
-                    component={FinalForms}
+                    path="/dashboard"
+                    component={DashboardAdvisors}
                 />
                  <GuestRoute
                     authenticated={this.props.isLoggedIn}
-                    path="/dashboard"
+                    path="/psychic-signup"
+                    component={PsychicSignup}
+                />
+                 <GuestRoute
+                    authenticated={this.props.isLoggedIn}
+                    path="/user-dashboard"
                     component={Dashboard}
                 />
                 
