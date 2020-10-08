@@ -52,20 +52,9 @@ const EditProfile = Form.create({
 
     return (
         <Form {...formItemLayout} onSubmit={handleSubmit} style={{ padding: '2rem' }}>
-            <Form.Item>
-                <img style={{ height: '150px', width: '150px', borderRadius: '75px' }} src='https://images.unsplash.com/photo-1587653666447-8a232c92e881?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='photo' />
-            </Form.Item>
-            <Form.Item>
-                {getFieldDecorator('image', {
-                    valuePropName: 'file',
-
-                })(<Upload listType="picture">
-                    <Button style={{ marginTop: '10px' }}>
-                        <Icon type="upload" /> Click to Update
-               </Button>
-                </Upload>)}
-            </Form.Item>
-            <Form.Item hasFeedback label="Full Name" >
+          <Row >
+       <Col  xs={24} sm={20} md={20} lg={20} >
+            <Form.Item  hasFeedback label="Full Name" >
                 {getFieldDecorator('fullname')(<Input
                     placeholder="full name"
                 />)}
@@ -90,13 +79,13 @@ const EditProfile = Form.create({
                 />)} <p>Tell our customers about the services you are offering them (150 - 500 words)</p>
             </Form.Item>
             <Form.Item hasFeedback label="Experience" >
-                {getFieldDecorator('experience')(<TextArea
+                {getFieldDecorator('experience')(<TextArea 
                     placeholder="Autosize height with minimum and maximum number of lines"
 
                 />)} <p>Tell our customers about your previous relevant experience as a psychic reader (150 - 500 words)</p>
             </Form.Item>
-            <Form.Item hasFeedback label="Chat start greeting">
-                {getFieldDecorator('chat-start')(<TextArea
+            <Form.Item    hasFeedback label="Chat start greeting">
+                {getFieldDecorator('chat-start')(<TextArea 
                     placeholder="click to edit"
                 />)} <p>Tell our customers about your previous relevant experience as a psychic reader (150 - 500 words)</p>
             </Form.Item>
@@ -116,25 +105,57 @@ const EditProfile = Form.create({
                     <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
                         <Row>
                             <Col span={8}>
-                                <Checkbox value="A">A</Checkbox>
+                                <Checkbox value="Career Advice">Career Advice
+                                
+                                </Checkbox>
                             </Col>
                             <Col span={8}>
-                                <Checkbox value="B">B</Checkbox>
+                                <Checkbox value="Dream Analysis">Dream Analysis</Checkbox>
                             </Col>
                             <Col span={8}>
-                                <Checkbox value="C">C</Checkbox>
+                                <Checkbox value="Psychic Reading">Psychic Reading</Checkbox>
                             </Col>
                             <Col span={8}>
-                                <Checkbox value="D">D</Checkbox>
+                                <Checkbox value="Love & Relationships"><strong> Love & Relationships</strong>
+                                <Checkbox value="Relationship Advice">Relationship Advice</Checkbox>
+                                <Checkbox value="Soulmates">Soulmates</Checkbox>
+                                </Checkbox>
+
                             </Col>
                             <Col span={8}>
-                                <Checkbox value="E">E</Checkbox>
+                                <Checkbox value="Clairvoyance">Clairvoyance</Checkbox>
+                            </Col>
+                            <Col span={8}>
+                                <Checkbox value="Astrology & Horoscopes">Astrology & Horoscopes</Checkbox>
+                            </Col>
+                            <Col span={8}>
+                                <Checkbox value="Tarot Readers">Tarot Readers</Checkbox>
                             </Col>
                         </Row>
                     </Checkbox.Group>
+
+
+
                 </Modal>
+            </Form.Item>    
+           </Col>
+           <Col  xs={24} sm={4} md={4} lg={4} lg={{pull:11}}  >
+            <Form.Item>
+                <img style={{ height: '150px', width: '150px', borderRadius: '75px' }} src='https://images.unsplash.com/photo-1587653666447-8a232c92e881?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='photo' />
             </Form.Item>
-            <Form.Item style={{ textAlign: 'left' }}>
+            <Form.Item>
+                {getFieldDecorator('image', {
+                    valuePropName: 'file',
+
+                })(<Upload listType="picture">
+                    <Button style={{ marginTop: '10px' }}>
+                        <Icon type="upload" /> Click to Update
+               </Button>
+                </Upload>)}
+            </Form.Item>
+            </Col>
+           </Row>
+           <Form.Item style={{ textAlign: 'left' }}>
                 <Button
                     type="primary"
                     htmlType="submit">

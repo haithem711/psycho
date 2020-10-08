@@ -38,7 +38,6 @@ class App extends React.Component {
   componentDidMount() {
     (async () => {
       if (this.props.isLoggedIn && this.props.user) {
-
         window.Echo.channel(
           `copsycho-private-message-notification-userId=${this.props.user.id}`
         ).listen("SentMessage", async e => {

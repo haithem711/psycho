@@ -25,10 +25,10 @@ const PrivateMessage = () => {
     return (
         <div >
            <Radio.Group onChange={onChange} value={value}>              
-              <div style={{display:'flex',width:'200px'}}>
+              <div style={{display:'flex',minWidth:'250px'}}>
               <Radio style={radioStyle} value={1}/>
                   <div>
-                        I will next be online at .<Select onChange={handleChange}
+                        I will next be online at . <Select onChange={handleChange}
                        style={{width:'90px'}}
                         showSearch={true} defaultValue="12:00 AM">
                         {filteredOptions.map(item => (
@@ -36,13 +36,12 @@ const PrivateMessage = () => {
                                 {item}
                             </Select.Option>
                         ))}
-                    </Select>
-                 I hope to see you there! </div>
+                    </Select> I hope to see you there! </div>
                  </div> 
        
                 <div style={{ display: 'flex', marginTop: '30px' }}>
                     <Radio style={radioStyle} value={2} />
-                    <div>  I am usually online from<Select onChange={handleChange}
+                    <div>  I am usually online from <Select onChange={handleChange}
                         style={{ width: '90px' }}
                         showSearch={true} placeholder="12:00 AM">
                         {filteredOptions.map(item => (
@@ -50,7 +49,7 @@ const PrivateMessage = () => {
                                 {item}
                             </Select.Option>
                         ))}
-                    </Select>-to <Select onChange={handleChange}
+                    </Select> -to <Select onChange={handleChange}
                         style={{ width: '90px' }}
                         showSearch={true} placeholder="12:00 AM">
                             {filteredOptions.map(item => (
@@ -58,8 +57,7 @@ const PrivateMessage = () => {
                                     {item}
                                 </Select.Option>
                             ))}
-                        </Select>
-                    most days. Looking forward to our next reading together.</div>
+                        </Select> most days. Looking forward to our next reading together.</div>
                 </div>
            </Radio.Group>
       <Checkbox style={{marginTop:'40px'}} onChange={onChangeAutoReply}>Checkbox</Checkbox>
